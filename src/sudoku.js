@@ -17,12 +17,14 @@ Sudoku.prototype.rowCzech = function(){
 Sudoku.prototype.columnCzech = function(){
   var columns = [];
   for(var i = 0; i < this.grid.length; i++){
+    var tempRow = [];
     for(var j = 0; j < this.grid.length; j++){
-      columns.push(this.grid[j][i]);
+      tempRow.push(this.grid[j][i]);
     }
+    columns.push(tempRow);
   }
   for(var k = 0; k < this.grid.length; k++){
-    var row = this.grid[k].slice().sort();
+    var row = columns[k].slice().sort();
     for(var f = 0; f < row.length; f++){
       if(row[f] != compareArray[f]){
         return false;

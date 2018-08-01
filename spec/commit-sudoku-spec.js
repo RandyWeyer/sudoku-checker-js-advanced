@@ -49,7 +49,7 @@ describe('Sudoku', function() {
     var newSudoku = new Sudoku(grid);
     expect(newSudoku.checkWin()).toEqual(true);
   });
-  it('should test if board repeats horizontally', function(){
+  it('should test if board repeats everywhere', function(){
     var grid = [
       [1, 1, 1, 1, 1, 1, 1, 1, 1],
       [1, 1, 1, 1, 1, 1, 1, 1, 1],
@@ -60,6 +60,21 @@ describe('Sudoku', function() {
       [1, 1, 1, 1, 1, 1, 1, 1, 1],
       [1, 1, 1, 1, 1, 1, 1, 1, 1],
       [1, 1, 1, 1, 1, 1, 1, 1, 1]
+    ];
+    var newSudoku = new Sudoku(grid);
+    expect(newSudoku.checkWin()).toEqual(false);
+  });
+  it('should test if board repeats horizontally', function(){
+    var grid = [
+      [1, 1, 1, 1, 1, 1, 1, 1, 1],
+      [2, 2, 2, 2, 2, 2, 2, 2, 2],
+      [3, 3, 3, 3, 3, 3, 3, 3, 3],
+      [4, 4, 4, 4, 4, 4, 4, 4, 4],
+      [5, 5, 5, 5, 5, 5, 5, 5, 5],
+      [6, 6, 6, 6, 6, 6, 6, 6, 6],
+      [7, 7, 7, 7, 7, 7, 7, 7, 7],
+      [8, 8, 8, 8, 8, 8, 8, 8, 8],
+      [9, 9, 9, 9, 9, 9, 9, 9, 9]
     ];
     var newSudoku = new Sudoku(grid);
     expect(newSudoku.checkWin()).toEqual(false);
